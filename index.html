@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS PROJECT</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+<!-- BACKGROUND IMAGE -->
+    <style>
+        body {
+          background-image: url('photo1.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+        </style>
+<!-- BACKGROUND IMAGE -->
+<div class="container">
+<!-- BODY SECTION -->
+<div class="container">
+    <h1 class="text-center">MIXOLOGY</h1>
+    <p class="text-center">Search a drink recipe by </p>
+</div>
+<!-- BODY SECTION -->
+        
+<!-- Button trigger modal -->
+    <center>
+        <button
+        type="button"
+        class="btn btn-light"
+        id="randomName"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        Random Drink!
+        </button>
+    </center>
+<!-- Button trigger modal -->
+  
+<!-- search by drink name -->
+    <form class="form-inline d-flex flex-column mt-3" id="search-bar">
+        <input
+            class="form-control mr-sm-2"
+            id="search-input"
+            type="search"
+            placeholder="name of the cocktail"
+            aria-label="Search"/>
+        <button
+            class="btn btn-light"
+            type="submit"
+            value="name">
+            Search by Drink
+        </button>
+    </form>
+    </div>
+<!-- search by drink name -->
+
+<!-- search by ingredient section -->
+<div class="container">
+    <form class="form-inline d-flex flex-column mt-3" id="search-bar-2">
+        <input
+            class="form-control mr-sm-2"
+            id="search-input-2"
+            type="search"
+            placeholder="name of the ingredient"
+            aria-label="Search"/>
+        <button
+            class="btn btn-light"
+            type="submit"
+            value="ingredient">
+            Search by ingredient
+        </button>
+    </form>
+    </div>
+</div>
+<!-- search by ingredient section -->
+
+<!-- Modal -->
+    <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true">
+
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Recipe</h5>
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+        </div>
+
+    <div class="modal-body">
+        <div class="container">
+        <div class="column">
+        <div class="col-md" id="avatar">
+        <p id="cocktailName"></p>
+    </div>
+          
+    <div class="col-md">
+        <p id="cocktailInfo">Ingredients:</p>
+<!-- Modal -->
+
+<!-- JS to add the content within the ul -->
+    <ul id="ingredients"></ul>
+        </div>
+        </div>
+        <div class="column">
+          <p id="cocktailSteps">Instructions:</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" id="randomName">
+        Random Drink!
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- search result -->
+<div class="container">
+    <div style="display: none" id="search-result">
+        <h2 id="search-title">Search Result for</h2>
+        <ul id="search-result-list"></ul>
+    </div>
+</div>
+<!-- search result -->
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+  crossorigin="anonymous"
+></script>
+
+
+</div>
