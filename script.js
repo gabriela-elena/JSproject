@@ -35,7 +35,7 @@ function randomDrink() {
 
 // set up cocktail info in modal
 function buildModalInfo(a1, a2, a3, a4, a5, response, i) {
-  // clear data before each build
+    // clear data before each build
   a4.innerHTML = "";
   createdP = document.createElement("p");
   if (a5.children.length > 0) {
@@ -47,7 +47,8 @@ function buildModalInfo(a1, a2, a3, a4, a5, response, i) {
   a2.src = response["drinks"][i]["strDrinkThumb"];
   a3.append(a2);
 
-  // create the ingredient list, 15 is the length of the ingredienand measurements in the API array
+  // create the ingredient list, 15 is the length of the ingredients 
+  // and measurements in the API array
   for (k = 1; k <= 15; k++) {
     let ingredientTemp = response["drinks"][i][`strIngredient${k}`];
     let measurementTemp = response["drinks"][i][`strMeasure${k}`];
@@ -81,18 +82,18 @@ function drinkSearch() {
     // clear data before each search
     searchResult.innerHTML = "";
     searchTitle.textContent = "Search Result for";
-    // distinguish search by name and search by ingredient
-    if (searchBar.value !== "" && event.target.innerText === 'Search by name') {
+    // distinguish Search Drink Name and Search Ingredient
+    if (searchBar.value !== "" && event.target.innerText === 'Search Drink Name') {
       searchTitle.textContent += ` '${searchBar.value}':`;
       searchAPI = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchBar.value}`;
     }
-    if (searchBarIngredient.value !== "" && event.target.innerText === 'Search by ingredient') {
+    if (searchBarIngredient.value !== "" && event.target.innerText === 'Search Ingredient') {
       searchTitle.textContent += ` '${searchBarIngredient.value}':`;
       searchAPI_2 = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchBarIngredient.value}`
     }
 
-    // need to call search by name API again for search by ingredient
-    if (searchBar.value !== "" && event.target.innerText === 'Search by name') {
+    // need to call Search Drink Name API again for Search Ingredient
+    if (searchBar.value !== "" && event.target.innerText === 'Search Drink Name') {
       let data = fetch(searchAPI).then((response) => response.json());
       data.then((result) => {
         for (i = 0; i < result["drinks"].length; i++) {
@@ -116,8 +117,8 @@ function drinkSearch() {
       });
     });
   }
-  // the first condition distinguishing search by name and search by ingredients ends here
-  else if (searchBarIngredient.value !== "" && event.target.innerText === 'Search by ingredient') {
+  // the first condition distinguishing Search Drink Name and Search Ingredients ends here
+  else if (searchBarIngredient.value !== "" && event.target.innerText === 'Search Ingredient') {
     let data = fetch(searchAPI_2).then((response) => response.json());
     let list_array = []
     data.then((result) => {
@@ -126,7 +127,7 @@ function drinkSearch() {
         searchResult.innerHTML += `<a style="text-decoration:underline; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><li id="list_${i}" >${result["drinks"][i]["strDrink"]}</li></a>`;
         list_array.push(result["drinks"][i]["idDrink"])
       }
-    // calling search by name API
+    // calling Search Drink Name API
     searchResult.addEventListener("click", (event) => {
       result_data = fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${event.target.textContent}`).then((response) => response.json())
       // console.log(list_array)
