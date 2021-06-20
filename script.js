@@ -50,14 +50,14 @@ function buildModalInfo(a1, a2, a3, a4, a5, response, i) {
   // create the ingredient list, 15 is the length of the ingredients 
   // and measurements in the API array
   for (k = 1; k <= 15; k++) {
-    let ingredientTemp = response["drinks"][i][`strIngredient${k}`];
-    let measurementTemp = response["drinks"][i][`strMeasure${k}`];
+    let ingredientEl = response["drinks"][i][`strIngredient${k}`];
+    let measurementEl = response["drinks"][i][`strMeasure${k}`];
     if (
-      ingredientTemp !== null &&
-      ingredientTemp !== "" &&
-      measurementTemp !== null
+      ingredientEl !== null &&
+      ingredientEl !== "" &&
+      measurementEl !== null
     ) {
-      a4.innerHTML += `<li>${ingredientTemp} : ${measurementTemp}</li>`;
+      a4.innerHTML += `<li>${ingredientEl} : ${measurementEl}</li>`;
     }
   }
   // show how to make the cocktail
