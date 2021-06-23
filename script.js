@@ -16,7 +16,6 @@ function randomDrink() {
         document.querySelector("#removeAfterClick").remove();
       }
       let data = fetch(randomAPI)
-        // how to wait till all data are ready and then show them?
         .then((data) => data.json())
         .then((response) => {
           buildModalInfo(
