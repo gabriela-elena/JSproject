@@ -14,12 +14,14 @@
   }
 
   h1 {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     font-weight: 800;
     font-style: bold;
     color: black;
   }
 
   h2 {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
@@ -30,6 +32,7 @@
     text-transform: capitalize;
   }
   p {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     font-weight: 800;
     font-style: regular;
     color: black;
